@@ -8,10 +8,10 @@ function sendEmail() {
 
 	Email.send({
         Host: "smtp.elasticemail.com",
-        Username : "karlitit0z@gmail.com",
-        Password : "760BCAACCBE63EAF191C6AE8ECB7FBD607B0",
+        Username : "carlos.coelho@caac.org.br",
+        Password : "C6D404F6AA892D7EC10966E1F6F389F0CF62",
         To : 'd3_nt@hotmail.com',
-        From : "karlitit0z@gmail.com",
+        From : "carlos.coelho@caac.org.br",
         Subject : "Contato pelo site",
         Body : `<ul>
             <li><strong>Igreja</strong>: ${igreja}</li>
@@ -22,6 +22,6 @@ function sendEmail() {
             <li><strong>Mensagem</strong>: ${msg}</li>        
         </ul>`,
 	}).then(
-		message => alert(message)
+		message => alert('Mensagem enviada com sucesso!')
 	);
 }
