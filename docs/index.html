@@ -27,17 +27,20 @@
 			<link rel="stylesheet" href="css/owl.carousel.css">
 			<link rel="stylesheet" href="css/hexagons.min.css">			
 			<link rel="stylesheet" href="css/main.css">
+			<script src="https://smtpjs.com/v3/smtp.js"></script> 
+			<script src="./js/index.js"></script>
 		</head>
 		<body>
 
 			<!-- start banner Area -->
-			<section class="banner-area" id="home">
+			<section class="banner-area" id="home" style="position: relative;">
+				<img class="bg" src="./assets/business-brainstorming-graph-chart-report-data-concept.jpg" />
 			<!-- Start Header Area -->
 			<header class="default-header">
 				<nav class="navbar navbar-expand-lg  navbar-light">
 					<div class="container">
 						  <a class="navbar-brand" href="index.html">
-						  	<img src="img/logo_caac.png" alt="">
+						  	<img src="img/logo_caac.png" alt="logo">
 						  </a>
 						  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						    <span class="lnr lnr-menu"></span>
@@ -47,8 +50,7 @@
 						    <ul class="navbar-nav">
 								<li><a href="#home">Filiação</a></li>
 								<li><a href="#service">Serviços</a></li>
-								<li><a href="#feature">Planos</a></li>
-								<li><a href="#price">Filie-se</a></li>												
+								<li><a href="#feature">Documentação</a></li>										
 						    </ul>
 						  </div>						
 					</div>
@@ -58,31 +60,33 @@
 				<div class="container">
 					<div class="row justify-content-end fullscreen align-items-center">
 						<div class="col-lg-6 col-md-12 banner-left">
-								<h1 class="text-white">
-									Legalize sua igreja
-								</h1>
-								<p class="mx-auto text-white  mt-20 mb-40">
-									Legalização de igrejas sem cobranças de honorários.</br>
-									Veja nossos planos de filiação.
-								</p>
+							<h1 class="text-white">
+								Legalização, tesouraria, secretaria e tudo que sua igreja precisa!
+							</h1>
 						</div>
 						<div class="col-lg-6 col-md-12 no-padding banner-right">
-							<form action="#" class="bg-white rounded p-40">
-								<h2 class="mb-4 mt-0 text-center">Filie-se</h2>
+							<form method="post" class="bg-white rounded p-40">
+								<h2 class="mb-4 mt-0 text-center">Fale com o CAACBRASIL</h2>
 								<div class="form-group">
-								  <input type="text" class="form-control pb_height-50 reverse" placeholder="Nome da Igreja">
+								  <input type="text" class="form-control pb_height-50 reverse" id='igreja' placeholder="Nome da Igreja">
 								</div>
 								<div class="form-group">
-								  <input type="text" class="form-control pb_height-50 reverse" placeholder="Nome do Pastor">
+								  <input type="text" class="form-control pb_height-50 reverse" id='pastor' placeholder="Nome do Pastor">
 								</div>
 								<div class="form-group">
-								  <input type="text" class="form-control pb_height-50 reverse" placeholder="Email">
+								  <input type="text" class="form-control pb_height-50 reverse" id='email' placeholder="Email">
 								</div>
 								<div class="form-group">
-									<input type="text" class="form-control pb_height-50 reverse" placeholder="Telefone">
-								  </div>
+									<input type="text" class="form-control pb_height-50 reverse" id='tel' placeholder="Telefone">
+								</div>
 								<div class="form-group">
-								  <input type="submit" class="btn btn-primary btn-lg btn-block pb_btn-pill  btn-shadow-blue" value="Filie-se">
+									<input type="text" class="form-control pb_height-50 reverse" id='local' placeholder="Cidade - UF">
+								</div>
+								<div class="form-group">
+									<textarea rows="5" class="form-control pb_height-50 reverse" id='msg' placeholder="Escreva aqui sua mensagem"></textarea>
+								</div>
+								<div class="form-group">
+								  <input type="button" onclick="sendEmail()" class="btn btn-primary btn-lg btn-block pb_btn-pill  btn-shadow-blue" value="Enviar">
 								</div>
 							</form>
 						</div>
@@ -98,35 +102,35 @@
 						<div class="menu-content pb-60 col-lg-8">
 							<div class="title text-center">
 								<h1 class="mb-10">Centro Administrativo Apologético Cristão do Brasil</h1>
-								<p>Como ação ministerial o <strong>CAAC</strong> visa orientar e legalizar Igrejas e Ministérios.</p>
+								<p>O <strong>CAACBRASIL</strong> é um Ministério que apoia e aconselha igrejas do evangelho de Cristo no exercício de sua missão com os seguintes serviços:</p>
 							</div>
 						</div>
 					</div>							
 					<div class="row">
 						<div class="col-lg-4">	
 							<div class="single-cat d-flex flex-column">
-								<a href="#" class="hb-sm-margin mx-auto d-block"><span class="hb hb-sm inv hb-facebook-inv"><span class="lnr lnr-license"></span></span></a>
+								<a class="hb-sm-margin mx-auto d-block"><span class="hb hb-sm inv hb-facebook-inv"><span class="lnr lnr-license"></span></span></a>
 								<h4 class="mb-20" style="margin-top: 23px;">Legalização</h4>
 								<p>
-									Legalização de igrejas e ministérios sem cobrança de honorários.
+									A igreja terá toda acessoria necessária para sua legalização: Ata, estatuto e CNPJ devidamente legalizados. 
 								</p>
 							</div>															
 						</div>
 						<div class="col-lg-4">	
 							<div class="single-cat">
-								<a href="#" class="hb-sm-margin mx-auto d-block"><span class="hb hb-sm inv hb-facebook-inv"><span class="lnr lnr-chart-bars"></span></span></a>
-								<h4 class="mt-40 mb-20">Tesouraria</h4>
+								<a class="hb-sm-margin mx-auto d-block"><span class="hb hb-sm inv hb-facebook-inv"><span class="lnr lnr-chart-bars"></span></span></a>
+								<h4 class="mt-40 mb-20">Tesouraria & Secretaria</h4>
 								<p>
-									inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards especially in the workplace. That’s why.
+									O sistema do <strong>Ministério CAACBRASIL</strong>, dá acesso à igreja filiada viabilizando mais agilidade e limpeza, nas escriturações internas e fiscais nas áreas de tesouraria, secretaria e patrimônio.
 								</p>
 							</div>															
 						</div>
 						<div class="col-lg-4">
 							<div class="single-cat">
-								<a href="#" class="hb-sm-margin mx-auto d-block"><span class="hb hb-sm inv hb-facebook-inv"><span class="lnr lnr-briefcase"></span></span></a>
-								<h4 class="mt-40 mb-20">Acessoria</h4>
+								<a class="hb-sm-margin mx-auto d-block"><span class="hb hb-sm inv hb-facebook-inv"><span class="lnr lnr-briefcase"></span></span></a>
+								<h4 class="mt-40 mb-20">Aconselhamentos</h4>
 								<p>
-									inappropriate behavior is often laughed off as “boys will be boys,” women face higher conduct standards especially in the workplace. That’s why.
+									A igreja filiada encontrará no <strong>Ministério CAACBRASIL</strong> aconselhamentos contábil, jurídico e eclesiástico.
 								</p>
 							</div>							
 						</div>
@@ -134,77 +138,35 @@
 				</div>	
 			</section>
 			<!-- End cat Area -->		
-
-			<!-- Start price Area -->
-			<section class="price-area section-gap" id="price">
-				<div class="container">
-					<div class="row d-flex justify-content-center">
-						<div class="menu-content pb-60 col-lg-8">
-							<div class="title text-center">
-								<h1 class="mb-10">Planos de Filiação</h1>
-								<p>Verifique o plano de acordo com o tamanho da sua igreja ou ministério.</p>
-							</div>
-						</div>
-					</div>					
-					<div class="row">
-						<div class="col-lg-4">
-							<div class="single-price">
-								<div class="top-sec d-flex justify-content-between">
-									<div class="top-left">
-										<h4>Standard</h4>
-										<p>For the <br>individuals</p>
-									</div>
-									<div class="top-right">
-										<h1>£199</h1>
-									</div>
-								</div>								
-							</div> 
-						</div>
-						<div class="col-lg-4">
-							<div class="single-price">
-								<div class="top-sec d-flex justify-content-between">
-									<div class="top-left">
-										<h4>Business</h4>
-										<p>For the <br>small Company</p>
-									</div>
-									<div class="top-right">
-										<h1>£399</h1>
-									</div>
-								</div>						
-							</div> 
-						</div>	
-						<div class="col-lg-4">
-							<div class="single-price">
-								<div class="top-sec d-flex justify-content-between">
-									<div class="top-left">
-										<h4>Ultimate</h4>
-										<p>For the <br>large Company</p>
-									</div>
-									<div class="top-right">
-										<h1>£499</h1>
-									</div>
-								</div>								
-							</div> 
-						</div>							
-																						
-					</div>
-				</div>	
-			</section>
-			<!-- End price Area -->
 			
 			<!-- Start call-to-action Area -->
-			<section class="call-to-action-area section-gap">
+			<section id='feature' class="call-to-action-area section-gap" style="position: relative;">
+				<img class="bg" src="./assets/businessman-examining-papers-at-table.jpg" style="top:0"/>
 				<div class="container">
 					<div class="row justify-content-center top">
-						<div class="col-lg-12">
+						<div class="col-lg-12" style="
+						display: flex;
+						flex-direction: column;
+					">
 							<h1 class="text-white text-center">Documentação Necessária</h1>
-							<p class="text-white text-center mt-30">
-								Documentos: Presidente, Vice presidente, Secretário e Tesoureiro; Cópia da Identidade, Cópia do CPF, Cópia do Comprovante de Residência + Relação com 15 membros fundadores, contendo: Nome Completo Nº Identidade e órgão emissor, CPF + Comprovante do local da Igreja (IPTU). Obs.: Documentos solicitados dentro do padrão do Cartório do Rio de Janeiro.
-							</p>							
+							<ul class="text-white" style="margin: 30px auto;max-width: 500px; list-style: disc; padding: 0 30px;">
+								<li>RG - Presidente, Vice-Presidente, Secretário e Tesoureiro</li>
+								<li>CPF - Presidente, Vice-Presidente, Secretário e Tesoureiro</li>
+								<li>Comprovante de residência - Presidente, Vice-Presidente, Secretário e Tesoureiro</li>
+								<li>Comprovante do local da igreja (IPTU)</li>
+								<li>Relação com 15 membros fundadores contendo:
+									<ul class="text-white" style="margin-left: 15px; list-style: circle;">
+										<li>Nome Completo</li>
+										<li>Número RG</li>
+										<li>Orgão Emissor</li>
+										<li>CPF</li>
+									</ul>
+								</li>
+							</ul>							
 						</div>
 					</div>
-					<div class="row justify-content-center d-flex">	
-						<a href="#home" class="text-uppercase header-btn">Filie-se</span></a>				
+					<div class="row justify-content-center d-flex" style="position: relative; z-index: 2;">	
+						<a href="#home" class="text-uppercase header-btn">Tire suas dúvidas aqui</span></a>				
 					</div>
 				</div>	
 			</section>
@@ -214,15 +176,15 @@
 			<!-- start footer Area -->		
 			<footer class="footer-area section-gap">
 				<div class="container">
-					<div class="col-lg-12">
-						<h2 class="text-white text-center">Fale Conosco</h2>
+					<div class="col-lg-12 d-flex flex-column">
+						<h2 class="text-center">Conheça mais sobre o CAACBRASIL</h2>
 						<p class="text-white text-center mt-30">
 							<div class="footer-social text-center">
-								<a href="#"><i class="fa fa-whatsapp"></i> </a>
-								<a href="#"><i class="fa fa-facebook"></i></a>
-								<a href="#"><i class="fa fa-phone"></i></a>
+								<a href="https://wa.me/552122221492" target="_blank" title="Whatsapp"><i class="fa fa-whatsapp"></i> </a>
+								<a href="https://www.facebook.com/CAACBRASIL" target="_blank" title="Facebook"><i class="fa fa-facebook"></i></a>
 							</div>
-						</p>							
+						</p>	
+						<img src="img/logo_caac.png" alt="logo" style="margin: 30px auto; width: 200px;">						
 					</div>
 				</div>
 			</footer>
