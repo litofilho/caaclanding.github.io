@@ -21,5 +21,5 @@ function sendEmail() {
                     <li><strong>Local</strong>: ${local}</li>
                     <li><strong>Mensagem</strong>: ${msg}</li>        
                 </ul>`,
-	}).then(message => alert(message))
+	}).then(message => alert('Mensagem enviada com sucesso!'))
 }
