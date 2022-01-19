@@ -1,3 +1,5 @@
+$ = jQuery
+
 function sendEmail() {
     let igreja = document.getElementById('igreja').value
     let pastor = document.getElementById('pastor').value
@@ -23,3 +25,9 @@ function sendEmail() {
                 </ul>`,
 	}).then(message => alert('Mensagem enviada com sucesso!'))
 }
+
+$('.cookies-bar-button').click(()=>{
+    console.log('clicou')
+    $('.cookies-bar').hide()
+})
+
