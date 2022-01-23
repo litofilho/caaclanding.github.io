@@ -2861,7 +2861,7 @@ h6 {
   width: 100%;
   position: fixed;
   bottom: 0;
-  background-color: rgb(252, 182, 65);
+  background-color: rgb(44 161 214);
   z-index: 3;
   color: #fff;
 }
@@ -2871,7 +2871,6 @@ h6 {
   padding: 25px;
   width: 100%;
   justify-content: space-between;
-  flex-wrap: wrap;
   align-items: center;
 }
 
@@ -2881,11 +2880,21 @@ h6 {
   margin: 0;
 }
 
+.cookies-bar-message a{
+  color: #fff;
+}
+
+.cookies-bar-message a:hover{
+  color: rgb(252 182 64);
+  text-decoration: underline;
+}
+
 .cookies-bar-button{
   display: inline-block;
   color: #fff !important;
-  background-color: rgb(51 109 82);
+  background-color: rgb(252 182 64);
   padding: 9px 12px;
   font-size: 13px;
   cursor: pointer;
+  white-space: nowrap;
 }

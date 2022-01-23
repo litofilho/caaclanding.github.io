@@ -27,7 +27,8 @@ function sendEmail() {
 }
 
 $('.cookies-bar-button').click(()=>{
-    console.log('clicou')
     $('.cookies-bar').hide()
 })
+
+$(`.navbar-collapse a`).click(()=>$('.navbar-toggler').click())
 
